@@ -15,8 +15,16 @@ Use 'Growth_effect_analysis.R' to investigate linear and nonlinear relationships
 ### <3.Distance_dependence_analysis>: 
 Use 'Distance_dependence_analysis.m' to investigate the distance dependence of MFC.
 
-### <4.Gene_analysis>: 
-Use Brainspan Atlas data to investigate the gene association of MFC.
+### <4.Birth_effect_analysis>: 
+Use 'PALM_code.sh' to perform surface-based, vertex-wise permutation test.
+
+### <5.Transcriptomic_asscociation_analysis>: 
+Use PLS regression to investigate the gene association of MFC.
+
+### <6.Behavior_analysis>: 
+Use behavioral outcomes data of 18 months of age to investigate the gene association of MFC.
+
+
 
 ## The following analyses were carried out using open source packages:
 
