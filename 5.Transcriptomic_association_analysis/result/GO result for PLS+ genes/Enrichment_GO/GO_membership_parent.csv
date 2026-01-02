@@ -1,0 +1,17 @@
+_MEMBER_GenesID,_LogP_GenesID,GO,Description,_PATTERN_,_RANK_,CHILD_GO_GenesID
+1,-14.548456022370651,GO:0032502,developmental process,M1,1,GO:0035239 tube morphogenesis
+1,-12.588425106978312,GO:0040011,locomotion,M1,1,GO:0030335 positive regulation of cell migration
+1,-12.574118294420977,GO:0032501,multicellular organismal process,M1,1,GO:0001775 cell activation
+1,-11.8880551824875,GO:0002376,immune system process,M1,1,GO:0002694 regulation of leukocyte activation
+1,-10.536659342292769,GO:0048518,positive regulation of biological process,M1,1,GO:0045785 positive regulation of cell adhesion
+1,-10.164893532848495,GO:0051179,localization,M1,1,GO:0098657 import into cell
+1,-10.141169706615926,GO:0050896,response to stimulus,M1,1,GO:0042060 wound healing
+1,-8.131741948509807,GO:0050789,regulation of biological process,M1,1,GO:0070663 regulation of leukocyte proliferation
+1,-7.989510195619011,GO:0042592,homeostatic process,M1,1,GO:0048871 multicellular organismal-level homeostasis
+1,-7.189405262814799,GO:0065007,biological regulation,M1,1,GO:0050878 regulation of body fluid levels
+1,-6.773689419142081,GO:0048519,negative regulation of biological process,M1,1,GO:0050866 negative regulation of cell activation
+1,-6.542929419896602,GO:0009987,cellular process,M1,1,GO:0008283 cell population proliferation
+1,-5.475949281501243,GO:0044419,biological process involved in interspecies interaction between organisms,M1,1,GO:0051607 defense response to virus
+1,-4.4599722546978064,GO:0016032,viral process,M1,1,GO:0046718 symbiont entry into host cell
+1,-3.185567462866728,GO:0022414,reproductive process,M1,1,GO:0060009 Sertoli cell development
+1,-2.0665099469044086,GO:0040007,growth,M1,1,GO:0048588 developmental cell growth

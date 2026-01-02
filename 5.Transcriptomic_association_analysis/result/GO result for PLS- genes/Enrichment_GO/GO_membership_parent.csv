@@ -1,0 +1,10 @@
+_MEMBER_GenesID,_LogP_GenesID,GO,Description,_PATTERN_,_RANK_,CHILD_GO_GenesID
+1,-4.6498752517754465,GO:0040011,locomotion,M1,1,GO:0030336 negative regulation of cell migration
+1,-4.147559294266444,GO:0048519,negative regulation of biological process,M1,1,GO:0051129 negative regulation of cellular component organization
+1,-3.393811132208631,GO:0050789,regulation of biological process,M1,1,GO:0099537 trans-synaptic signaling
+1,-3.3937895784850816,GO:0032501,multicellular organismal process,M1,1,GO:0044057 regulation of system process
+1,-3.2466878163231137,GO:0032502,developmental process,M1,1,GO:0050771 negative regulation of axonogenesis
+1,-2.6325011049676923,GO:0044419,biological process involved in interspecies interaction between organisms,M1,1,GO:0062208 positive regulation of pattern recognition receptor signaling pathway
+1,-2.5007945872861277,GO:0051179,localization,M1,1,GO:0030705 cytoskeleton-dependent intracellular transport
+1,-2.404169146191271,GO:0050896,response to stimulus,M1,1,GO:0060070 canonical Wnt signaling pathway
+1,-2.370242578102849,GO:0065007,biological regulation,M1,1,GO:0051098 regulation of binding
