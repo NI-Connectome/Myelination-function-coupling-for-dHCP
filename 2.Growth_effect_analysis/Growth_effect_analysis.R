@@ -1,13 +1,13 @@
-# this code compute the growth effect of MFC
+# this code computes the growth effect of MFC
 # use the "install.packages()" function to add the required packages before running this code
-# Please set "YourPath before" running this code
+# Please set "YourPath" before running this code
 
 library(mgcv)
 library(R.matlab)
 library(gratia)
 
-MFC <- readMat("YourPath/data/MFC.mat")  #MFC：Vertex-level gMFC/sMFC/MFC
-Age <- readMat("YourPath/data/Age_364.mat") 
+MFC <- readMat("MFC.mat")  #MFC：Vertex-level gMFC/sMFC/MFC  (8589 vertices * 364 subjects)
+Age <- readMat("Age_364.mat") 
 GAM_data <- list()
 GAM_data$PMA <- Age$PMA364     # PMA at scan
 GAM_data$MFC_gs <- MFC$gMFC.v  # gMFC
@@ -23,7 +23,7 @@ derivs <- matrix(1:8589, nrow = 8589, ncol = 1)
 ### the growth effect of gMFC
 for (i in 1:nrow(GAM_data$MFC_gs)) {
   current_GAM_data$current_MFC <- GAM_data$MFC_gs[i, ]
-  fit_GAM <- gam(current_MFC ~ s(PMA, bs="tp", k=3), data=current_GAM_data, method="REML")  # GAM model: thin plate regression splined
+  fit_GAM <- gam(current_MFC ~ s(PMA, bs="tp", k=3)+sex+s(head)+s(mFD), data=current_GAM_data, method="REML")  # GAM model
   summary_model <- summary(fit_GAM)  # GAM model fitting result
   Pvalue_all[i,1] = summary_model$s.table[1,4] 
   deriv <- derivatives(fit_GAM, term='s(PMA)', order=1)  # the first derivative of the age smooth function
@@ -36,7 +36,7 @@ write.table(derivs,"YourPath/result/derivs_gs.csv",row.names=F, col.names=F)
 ### the growth effect of sMFC
 for (i in 1:nrow(GAM_data$MFC_ss)) {
   current_GAM_data$current_MFC <- GAM_data$MFC_ss[i, ]
-  fit_GAM <- gam(current_MFC ~ s(PMA, bs="tp", k=3), data=current_GAM_data, method="REML")   # GAM model: thin plate regression splined
+  fit_GAM <- gam(current_MFC ~ s(PMA, bs="tp", k=3)+sex+s(head)+s(mFD), data=current_GAM_data, method="REML")   # GAM model: thin plate regression splined
   summary_model <- summary(fit_GAM) # GAM model fitting result
   Pvalue_all[i,1] = summary_model$s.table[1,4]
   deriv <- derivatives(fit_GAM, term='s(PMA)', order=1) # the first derivative of th eage smooth function
@@ -50,7 +50,7 @@ write.table(derivs,"YourPath/result/derivs_ss.csv",row.names=F, col.names=F)
 ### the growth effect of MFC
 for (i in 1:nrow(GAM_data$MFC_gss)) {
   current_GAM_data$current_MFC <- GAM_data$MFC_gss[i, ]
-  fit_GAM <- gam(current_MFC ~ s(PMA, bs="tp", k=3), data=current_GAM_data, method="REML")   # GAM model: thin plate regression splined
+  fit_GAM <- gam(current_MFC ~ s(PMA, bs="tp", k=3)+sex+s(head)+s(mFD), data=current_GAM_data, method="REML")   # GAM model: thin plate regression splined
   summary_model <- summary(fit_GAM) # GAM model fitting result
   Pvalue_all[i,1] = summary_model$s.table[1,4]
   deriv <- derivatives(fit_GAM, term='s(PMA)', order=1) # the first derivative of th eage smooth function
