@@ -4,6 +4,4 @@ Specifically,
 
 The program 'MFC_calculating.m' includes calculating FC, gMC, sMC, MFC, gMFC, and sMFC.
 
-The subfolder 'data' includes cortical myelin data for calculating MC and network label.
-
 The subfolder 'result' includes calculted MFC 'Result_MFC_DemoSub.mat' (including MFC/gMFC/sMFC). The visualization effect is as shown in Figure 'DemoSub_brainmap_MFC.png'.
