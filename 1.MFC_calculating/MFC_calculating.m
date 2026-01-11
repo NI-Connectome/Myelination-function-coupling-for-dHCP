@@ -16,8 +16,7 @@ NumVertex = size(Ind_notNuc,1);     % number of cortical veretices: 8589
 Ind_utri = find(triu(ones(NumVertex),1)); % matrix vectorization
 
 %% load the calculated individual-specific FC for the demo subject
-foldername = your_path;
-filename = sprintf('sub-%s_ses-%s_hemi-LR_BOLD_correlation.hemi_5k.dconn.nii',subj,sess); % functional connectome
+filename = sprintf('sub-%s_ses-%s_hemi-LR_BOLD_correlation.hemi_5k.dconn.nii',subj,sess); % functional connectome that calculated by preprocessing program 'dHCP_Term_func.sh' 
 filepath = fullfile(foldername,filename);
 sub_FC = ciftiopen(filepath);
 sub_FC = sub_FC.cdata;
@@ -65,24 +64,6 @@ for m=1:length(Ind_notNuc)
     MFC_gss_v_R2(m,1) = 1-(8588-1)/(8588-2-1)*(1-MFC_gss_v_R2(m,1)); % the adjusted coefficient of determination
 end
 
-%% draw brain map using workbench
-mycifti = cifti_read('./data/sub-CC00056XX07_ses-10700_hemi-LR_sulc.hemi_5k.dtseries.nii');
-cMFC_gs_v_R2 = zeros(9684,1);
-cMFC_gs_v_R2(Ind_notNuc(1:8589,:),1) = MFC_gs_v_R2(1:8589,1);
-mycifti.cdata = cMFC_gs_v_R2;  ciftisavereset(mycifti, './result/gMFC_DemoSub.dtseries.nii'); % gMFC
 
-cMFC_ss_v_R2 = zeros(9684,1);
-cMFC_ss_v_R2(Ind_notNuc(1:8589,:),1) = MFC_ss_v_R2(1:8589,1);
-mycifti.cdata = cMFC_ss_v_R2;  ciftisavereset(mycifti, './result/sMFC_DemoSub.dtseries.nii'); % sMFC
-
-cMFC_gss_v_R2 = zeros(9684,1);
-cMFC_gss_v_R2(Ind_notNuc(1:8589,:),1) = MFC_gss_v_R2(1:8589,1);
-mycifti.cdata = cMFC_gss_v_R2;  ciftisavereset(mycifti, './result/MFC_DemoSub.dtseries.nii'); % MFC
-
-% Then, you can execute the 'wb_view' command in the system terminal to open the visualization interface, 
-% import the surface file we provided (week-40_hemi-left_space-dhcpSym_dens-5k_midthickness.surf.gii and
-% week-40_hemi-right_space-dhcpSym_dens-5k_midthickness.surf.gii) and the MFC data file obtained above 
-% (MFC_DemoSub.dtseries.nii, gMFC_DemoSub.dtseries.nii, and sMFC_DemoSub.dtseries.nii), 
-% which can display the MFC mind map at the vertex level. 
-% The visualization effect is as shown in Figure 'DemoSub_brainmap_MFC.png'.
-% You can adjust the colorbar according to your preferences.
+% Then, you can execute the 'wb_view' command in the system terminal to display the MFC map at the vertex level. 
+% The visualization effect is as shown in Figure 'DemoSub_brainmap_MFC.png'. You can adjust the colorbar according to your preferences.
