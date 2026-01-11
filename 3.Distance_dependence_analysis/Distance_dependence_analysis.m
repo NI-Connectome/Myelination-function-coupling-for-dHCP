@@ -8,8 +8,8 @@ subj = 'CC00056XX07'; % the demo subject
 sess = '10700'; % the demo session of the subject
 
 %%%% load geodesic distance matrix on the mid-thickness surafce 
-load('./data/distance.mat','distance_left')  % geodesic distance matrix for left sphere
-load('./data/distance.mat','distance_right')  % geodesic distance matrix for right sphere
+load('distance.mat','distance_left')  % geodesic distance matrix for left sphere
+load('distance.mat','distance_right')  % geodesic distance matrix for right sphere
 
 %% divide vertices into 50 vertex-specific parts of equal size based on vertex-to-vertex distance
 %%%%% vertex-specific 50 parts for left sphere
